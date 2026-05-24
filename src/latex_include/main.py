@@ -73,8 +73,8 @@ def _recursion(inFile:typing.TextIO, outFile:typing.TextIO, includeDir:pl.Path,
         outFile.write(f"% ========= begin {label} of '{includeFilename}' ({includePathAbs}) ==========\n")
         outFile.write(surround)
         with includePathAbs.open() as file:
-            _recursion(file, outFile, includeOnly=includeOnly,
-                             isResolveInclude=newIsResolveInclude)
+            _recursion(file, outFile, includeDir,
+                       includeOnly=includeOnly, isResolveInclude=newIsResolveInclude)
         outFile.write(surround)
         outFile.write(f"% ========= end {label} of '{includeFilename}' ({includePathAbs}) ==========\n")
         outFile.write(after)
