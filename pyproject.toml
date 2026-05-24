@@ -5,7 +5,7 @@ version = "0.1.0"
 description = "Resolve \\include and \\input commands in a LaTeX document as LaTeX does"
 readme = "README.md"
 license = "MIT"
-license-files = [ "LICENSE" ]
+license-files = [ "LICENSE.md" ]
 keywords = [ "latex", "tool" ]
 classifiers = [
     "Programming Language :: Python :: 3",
@@ -29,10 +29,9 @@ dependencies = [
 
 
 [project.urls]
-# Repository = "https://github.com/bjhend/gitlatexdiff-original"
-# Documentation = "https://gitlatexdiff-original.readthedocs.io"
-# Issues = "https://github.com/bjhend/gitlatexdiff-original/issues"
-# Changelog = "https://github.com/bjhend/gitlatexdiff-original/blob/main/CHANGELOG.md"
+Repository = "https://github.com/bjhend/latex-include"
+Issues = "https://github.com/bjhend/latex-include/issues"
+Changelog = "https://github.com/bjhend/latex-include/blob/main/CHANGELOG.md"
 
 
 [project.scripts]
