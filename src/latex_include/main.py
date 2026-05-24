@@ -132,13 +132,17 @@ def latexIncludeFiles(inPath:pl.Path|str, outPath:pl.Path|str|None=None, overwri
         overwrite: overwrite existing output file if `True`
 
     Raises:
-        OSError:         If a file cannot be opened.
-        FileExistsError: If `outPath` exists and `overwrite` is `False`. Note that
-                         `FileExistsError` is a specialization of `OSError`, so
-                         catch it first.
+        OSError:           If a file cannot be opened.
+        FileNotFoundError: If `inPath` is not found.
+        FileExistsError:   If `outPath` exists and `overwrite` is `False`.
+
+    Note:
+        `FileNotFoundError` and `FileExistsError` are specializations of `OSError`,
+        so catch them before `OSError`.
     """
     inPath = pl.Path(inPath)
-    assert inPath.is_file()
+    if not inPath.is_file():
+        raise FileNotFoundError(inPath)
 
     inPathAbs = inPath.absolute()
     if outPath:
@@ -172,6 +176,9 @@ def main() -> None:
 
     try:
         latexIncludeFiles(args.input, args.output, overwrite=args.overwrite)
+    except FileNotFoundError as ex:
+        print(f"Input file not found: {ex}")
+        exit(1)
     except FileExistsError as ex:
         print(f"Output exists. Delete it or set option --overwrite (-w) to overwrite it: {ex}")
         exit(1)
