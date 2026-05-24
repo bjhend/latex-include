@@ -1,0 +1,45 @@
+
+[project]
+name = "latex-include"
+version = "0.1.0"
+description = "Resolve \\include and \\input commands in a LaTeX document as LaTeX does"
+readme = "README.md"
+license = "MIT"
+license-files = [ "LICENSE" ]
+keywords = [ "latex", "tool" ]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Topic :: Text Processing :: Markup :: LaTeX",
+]
+authors = [
+    {name = "bjhend", email = "developer@bjhend.de"},
+]
+maintainers = [
+    {name = "bjhend", email = "developer@bjhend.de"},
+]
+
+requires-python = ">=3.12"
+dependencies = [
+    "beartype",
+    "mkdocs",
+    "mkdocstrings[python]",
+    "pymdown-extensions",
+    "icecream",
+]
+
+
+[project.urls]
+# Repository = "https://github.com/bjhend/gitlatexdiff-original"
+# Documentation = "https://gitlatexdiff-original.readthedocs.io"
+# Issues = "https://github.com/bjhend/gitlatexdiff-original/issues"
+# Changelog = "https://github.com/bjhend/gitlatexdiff-original/blob/main/CHANGELOG.md"
+
+
+[project.scripts]
+latex-include = "latex_include:main"
+
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
