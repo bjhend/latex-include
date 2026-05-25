@@ -1,5 +1,5 @@
 site_name: latex-include
-#repo_url: https://github.com/bjhend/gitlatexdiff-original
+repo_url: https://github.com/bjhend/latex-include
 # This makes the links in the static site work locally
 use_directory_urls: false
 
