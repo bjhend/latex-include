@@ -30,6 +30,7 @@ dependencies = [
 
 [project.urls]
 Repository = "https://github.com/bjhend/latex-include"
+Documentation = "https://latex-include.readthedocs.io"
 Issues = "https://github.com/bjhend/latex-include/issues"
 Changelog = "https://github.com/bjhend/latex-include/blob/main/CHANGELOG.md"
 

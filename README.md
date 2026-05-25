@@ -2,59 +2,43 @@
 
 Resolve `\include` and `\input` commands in a LaTeX document as LaTeX does.
 
-
-### License
-
-See [License](LICENSE.md)
-
-
-### Changelog
-
-See [Changelog](CHANGELOG.md)
-
-
-## Purpose
-
 Some LaTeX tools like for example [*latexdiff*](https://www.ctan.org/pkg/latexdiff) cannot resolve `\include` and `\input` commands. This package resolves `\include` and `\input` creating a single LaTeX document that replaces the commands with the included files.
 
 According to the LaTeX specification `\input` is recursively replaced by the included files. Opposed to that `\include` is only resolved one level deep and if the preamble contains an `\includeonly` command then only the include files listed in `\includeonly` are replaced. Other `\include` commands are ignored. This package considers this specification.
 
 
-## Documentation
+### Documentation
 
-Documentation is generated with MkDocs. See [Contributing](#contributing) below for details.
+Complete documentation is available on [Read the Docs](https://latex-include.readthedocs.io).
+
+
+### Changelog
+
+See `CHANGELOG.md`
 
 
 
 ## Installation
 
-### Prerequesites
-
-* Python3 is available with at least the version set in `pyproject.toml`
-
-
-### Install
-
-The installation itself can be done with `pip` or [`pipx`](https://pipx.pypa.io):
+To use `latex-include` as executable script install it with `pip` or [`pipx`](https://pipx.pypa.io):
 
 ```
 pip(x) install latex-include
+```
+
+To use `latex-include` within Python import it with hyphen replaces by underscore:
+
+```python
+import latex_include
 ```
 
 
 
 ## Usage
 
-The package provides multiple levels of access:
+### As command line tool
 
-* Function `latexInclude` receives an open input and an open output text stream resolving the inclusion commands in the input to create the output.
-* Function `latexIncludeFiles` receives an input file path and optionally an output file path. It opens the files and calls `latexInclude` with them. If the output argument is omitted output will be `stdout`.
-* The package can be executed from the command line with the command `latex-include` (see [options](#command-line-options) below).
-
-See generated documentation for details how to call the Python functions.
-
-
-### Command line options
+After installation with `pip` or `pipx` (see [above](#installation)) the command `latex-include` is available.
 
 Calling `latex-include --help` reproduces the following help text:
 
@@ -74,6 +58,16 @@ options:
 ```
 
 Note, that `stdin` cannot be used for input, because we need the directory of the input file to find included files.
+
+
+### As Python package
+
+The packge provides the following functions:
+
+* `latexInclude` receives an open input and an open output text stream resolving the inclusion commands in the input to create the output.
+* `latexIncludeFiles` receives an input file path and optionally an output file path. It opens the files and calls `latexInclude` with them. If the output argument is omitted output will be printed to `stdout`.
+
+For details how to call these functions see [reference documentation](https://latex-include.readthedocs.io) on Read the Docs or generate documentation locally as described [below](#contributing).
 
 
 
