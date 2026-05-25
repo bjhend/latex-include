@@ -35,7 +35,7 @@ Changelog = "https://github.com/bjhend/latex-include/blob/main/CHANGELOG.md"
 
 
 [project.scripts]
-latex-include = "latex_include:main"
+latex-include = "latex_include.main:main"
 
 
 [build-system]
